@@ -31,11 +31,11 @@ class ModelTrainer:
                 # 加载五天的数据，day_start 到 day_start+4
                 company_features, daily_news_features, target_company_features = load_train_data(
                     train_data, company_dates, day_start, 2)
-                print("Shape of company_features:", company_features.shape)
-                print(f"company_features: ", company_features)
-                for i, news_features in enumerate(daily_news_features):
-                    print(f"news_features[{i}]:", news_features)
-                print(f"target_company_features: ", target_company_features)
+                #  print("Shape of company_features:", company_features.shape)
+                #  print(f"company_features: ", company_features)
+                #  for i, news_features in enumerate(daily_news_features):
+                #      print(f"news_features[{i}]:", news_features)
+                #  print(f"target_company_features: ", target_company_features)
                 # 确保所有数据都是Tensor类型
                 company_features = torch.tensor(company_features, dtype=torch.float32)
                 daily_news_features = [torch.tensor(day, dtype=torch.float32) for day in daily_news_features]
@@ -52,5 +52,5 @@ class ModelTrainer:
             print(f'Epoch {epoch + 1}, Loss: {total_loss:.4f}')
 
         # 保存模型
-        torch.save(self.model.state_dict(), "C:/Users/user/Desktop/Project_GNN/pythonProject/model.pth")
+        torch.save(self.model.state_dict(), "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/model.pth")
         print("Training completed.")

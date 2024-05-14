@@ -1,16 +1,16 @@
 from dataset import initialize_dataset
 from train import ModelTrainer
-from forecast1 import ModelPredictor
-from forecast1 import save_results
+from forecast_pn import ModelPredictor
+from forecast_pn import save_results
 import os
 
 
 def main():
     # 指定文件路径
-    COMPANY_FILEPATH = "C:/Users/user/Desktop/Project_GNN/pythonProject/fin_data_normalized.xlsx"
-    NEWS_FILEPATH = "C:/Users/user/Desktop/Project_GNN/pythonProject/news_data_normalized.xlsx"
-    MODEL_PATH = "C:/Users/user/Desktop/Project_GNN/pythonProject/model.pth"
-    OUTPUT_FILE = "C:/Users/user/Desktop/predicted_findata.xlsx"
+    COMPANY_FILEPATH = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/fin_data_normalized.xlsx"
+    NEWS_FILEPATH = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/news_data_normalized.xlsx"
+    MODEL_PATH = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/model.pth"
+    OUTPUT_FILE = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/predicted_findata.xlsx"
 
     # 初始化数据集，获取训练集、测试集、日期、测试开始日期，以及标准化参数
     train_data, test_data, company_dates = initialize_dataset(COMPANY_FILEPATH, NEWS_FILEPATH)
