@@ -7,8 +7,8 @@ import os
 
 def main():
     # 指定文件路径
-    COMPANY_FILEPATH = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/fin_data_normalized.xlsx"
-    NEWS_FILEPATH = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/news_data_normalized.xlsx"
+    COMPANY_FILEPATH = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/dataset/fin_data_normalized.xlsx"
+    NEWS_FILEPATH = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/dataset/news_data_normalized.xlsx"
     MODEL_PATH = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/model.pth"
     OUTPUT_FILE = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/predicted_findata.xlsx"
 
