@@ -29,7 +29,7 @@ class FinancialDataProcessor:
         daily_data = []
         for company in self.company_names:
             company_columns = [f"{company}.{feature}" for feature in ['收盘价']]
-         #                      ['开盘价', '最高价', '最低价', '收盘价', '均价', '涨跌']]
+            #                      ['开盘价', '最高价', '最低价', '收盘价', '均价', '涨跌']]
             company_data = self.data.loc[date, company_columns]
             daily_data.append(company_data.values)
         return np.array(daily_data)

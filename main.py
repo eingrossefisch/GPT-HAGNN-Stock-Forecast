@@ -5,12 +5,16 @@ from forecast_pn import save_results
 import os
 
 
+
 def main():
+
     # 指定文件路径
-    COMPANY_FILEPATH = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/dataset/fin_data_normalized.xlsx"
-    NEWS_FILEPATH = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/dataset/news_data_normalized.xlsx"
-    MODEL_PATH = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/model.pth"
-    OUTPUT_FILE = "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/predicted_findata.xlsx"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # 构建相对路径
+    COMPANY_FILEPATH = os.path.join(current_dir, 'dataset', 'fin_data_normalized.xlsx')
+    NEWS_FILEPATH = os.path.join(current_dir, 'dataset', 'news_data_normalized.xlsx')
+    MODEL_PATH = os.path.join(current_dir, 'output', 'model.pth')
+    OUTPUT_FILE = os.path.join(current_dir, 'output', 'predicted_findata.xlsx')
 
     # 初始化数据集，获取训练集、测试集、日期、测试开始日期，以及标准化参数
     train_data, test_data, company_dates = initialize_dataset(COMPANY_FILEPATH, NEWS_FILEPATH)
@@ -22,7 +26,7 @@ def main():
         num_heads=3,
         dropout=0.6,
         learning_rate=0.35,  # 0.15,0.35,0.4
-        epochs=5  # 5,5,7
+        epochs=2  # 5,5,7
     )
     trainer.train(train_data, company_dates)
 

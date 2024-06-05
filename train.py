@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import os
 import torch.optim as optim
 from graph import Graph
 from dataset import load_train_data
@@ -52,5 +53,6 @@ class ModelTrainer:
             print(f'Epoch {epoch + 1}, Loss: {total_loss:.4f}')
 
         # 保存模型
-        torch.save(self.model.state_dict(), "C:/Users/user/Desktop/HAN Stock Forecast/HAN Stock Forecast/model.pth")
-        print("Training completed.")
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        path = os.path.join(current_dir, 'output', 'model.pth')
+        torch.save(self.model.state_dict(), path)

@@ -13,7 +13,6 @@ def save_results(results, output_file_path):
     print("预测完成，结果已写入", output_file_path)
 
 
-
 class ModelPredictor:
     def __init__(self, model_path, test_data, company_dates):
         self.model = Graph(company_features_dimension=1, news_features_dimension=1, num_heads=1, dropout=0.6)

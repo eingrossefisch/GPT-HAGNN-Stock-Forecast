@@ -4,10 +4,6 @@ import torch
 from company_preprocess import FinancialDataProcessor as CompanyProcessor
 from news_preprocess import NewsDataProcessor
 
-# 数据文件路径定义
-COMPANY_FILEPATH = "C:/Users/user/Desktop/Project_GNN/pythonProject/fin_data_normalized.xlsx"
-NEWS_FILEPATH = "C:/Users/user/Desktop/Project_GNN/pythonProject/news_data_normalized.xlsx"
-
 
 def align_news_data(company_dates, news_dates, news_data):
     # 创建以公司交易日为索引的新DataFrame，初始化时指定数据类型为 float
